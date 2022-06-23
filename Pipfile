@@ -1,0 +1,16 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[scripts]
+run = "python curves.py"
+
+[dev-packages]
+
+[packages]
+numpy = "1.22.3"
+matplotlib = "3.5.2"
+
+[requires]
+python_version = "3.10"
