@@ -6,6 +6,9 @@ import os
 import math
 
 
+data_file_wallet = 3
+data_file_negative = 1
+
 def data_in_list(folder, file_to_read):
     f= open(folder + "/" + file_to_read, "r")
     lines = csv.reader(f)
@@ -34,9 +37,7 @@ def data_in_curves(liste, title=None ):
         liste_norm2.append(i[1]/(200**2))
     y1 = liste_norm1
     y2 = liste_norm2
-
     plt.figure()
-    #plt.plot(x, y1, c="blue", label="accelerometer norm")
     plt.plot(x, y2, c="orange", label="gyroscope norm")
     plt.plot(x, y1, c="blue", label="accelerometer norm")
     plt.title(title)
@@ -45,7 +46,7 @@ def data_in_curves(liste, title=None ):
     plt.legend()
     plt.show()
 
-def data_in_curves2(liste, title_file=None):
+def data_in_curves2(liste , title_file):
     nb_prises = 0
     idx = []
     for i in range(len(liste)): 
@@ -79,10 +80,19 @@ def data_in_curves2(liste, title_file=None):
         plt.ylabel("norm")
         plt.title("gyroscope norm")
         plt.legend()
+    plt.savefig("output"+"/"+str(title_file))
     plt.show()
-    plt.savefig(title_file)
+    
+
+pathlib.Path("output").mkdir(parents=True, exist_ok=True)
+
+for i in range(data_file_wallet):
+    data_in_curves2(data_in_list("./data/wallet" ,f"custom_output_wallet_gyroscope_norm_test{i+1}.txt"), f"custom_output_wallet_norm_graph_{i+1}")
+
+for i in range(data_file_negative):
+    data_in_curves2(data_in_list("./data/negative" ,f"custom_output_negative_gyroscope_norm_{i+1}.txt"), f"custom_output_negative_norm_graph_{i+1}")
 
 
-data_in_curves2(data_in_list("./data" ,"custom_output_wallet_gyroscope_norm_test2.txt"), "custom_output_wallet_norm_graph_2")
+
 
  
