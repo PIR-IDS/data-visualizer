@@ -13,7 +13,7 @@
     <a href="https://github.com/PIR-IDS/data-visualizer/releases"><strong>See Releases »</strong></a>
     <br />
     <br />
-    <a href="#">Research Paper</a>
+    <a href="https://github.com/PIR-IDS/research-paper">Research Paper</a>
     ·
     <a href="https://github.com/PIR-IDS/data-visualizer/actions/workflows/test.yml">Test Results</a>
     ·
@@ -109,11 +109,7 @@ _TODO_
 <!-- CREDITS -->
 ## Credits
 
-Romain Monier [ [GitHub](https://github.com/rmonier) ] – Co-developer
-<br>
-Amélie Muller [ [GitHub](https://github.com/AmelieMuller) ] – Co-developer
-<br>
-Noé Chauveau [ [GitHub](https://github.com/Noecv) ] – Co-developer
+Amélie Muller [ [GitHub](https://github.com/AmelieMuller) ] – Developer
 
 <!-- CONTACT -->
 ## Contact
